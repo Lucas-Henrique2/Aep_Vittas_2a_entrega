@@ -1,4 +1,4 @@
-package com.vittas.repository;
+package br.com.vittas.vittas.repository;
 
 import com.vittas.model.Paciente;
 import org.springframework.data.jpa.repository.JpaRepository;

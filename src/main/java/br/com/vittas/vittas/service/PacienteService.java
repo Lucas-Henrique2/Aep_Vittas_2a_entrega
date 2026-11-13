@@ -1,4 +1,4 @@
-package com.vittas.service;
+package br.com.vittas.vittas.service;
 
 import com.vittas.model.Paciente;
 import com.vittas.repository.PacienteRepository;

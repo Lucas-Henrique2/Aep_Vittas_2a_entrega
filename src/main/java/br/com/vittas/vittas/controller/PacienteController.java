@@ -1,4 +1,4 @@
-package com.vittas.controller;
+package br.com.vittas.vittas.controller;
 
 import com.vittas.model.Paciente;
 import com.vittas.service.PacienteService;
