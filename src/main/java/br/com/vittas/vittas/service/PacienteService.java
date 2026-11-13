@@ -1,46 +1,37 @@
-package com.vittas.service;
+package br.com.vittas.vittas.service;
 
-import com.vittas.model.Paciente;
-import com.vittas.repository.PacienteRepository;
+import br.com.vittas.vittas.model.Paciente;
+import br.com.vittas.vittas.repository.PacienteRepository;
 import org.springframework.stereotype.Service;
-
 import java.util.List;
 
 @Service
 public class PacienteService {
-
     private final PacienteRepository repository;
 
     public PacienteService(PacienteRepository repository) {
         this.repository = repository;
     }
 
-    public Paciente criar(Paciente paciente) {
-        return repository.save(paciente);
-    }
+    public Paciente criar(Paciente paciente) { return repository.save(paciente); }
+    public List<Paciente> listarTodos() { return repository.findAll(); }
 
     public Paciente buscarPorId(Long id) {
-        return repository.findById(id)
-                .orElseThrow(() -> new RuntimeException("Paciente não encontrado: " + id));
-    }
-
-    public List<Paciente> listarTodos() {
-        return repository.findAll();
+        return repository.findById(id).orElseThrow(() -> new RuntimeException("Paciente não encontrado: " + id));
     }
 
     public Paciente atualizar(Long id, Paciente dados) {
-        Paciente existente = buscarPorId(id);
-        existente.setNome(dados.getNome());
-        existente.setCpf(dados.getCpf());
-        existente.setEmail(dados.getEmail());
-        existente.setTelefone(dados.getTelefone());
-        existente.setCartaoSus(dados.getCartaoSus());
-        existente.setDataNascimento(dados.getDataNascimento());
-        return repository.save(existente);
+        Paciente p = buscarPorId(id);
+        p.setNome(dados.getNome());
+        p.setCpf(dados.getCpf());
+        p.setEmail(dados.getEmail());
+        p.setTelefone(dados.getTelefone());
+        p.setCartaoSus(dados.getCartaoSus());
+        p.setDataNascimento(dados.getDataNascimento());
+        return repository.save(p);
     }
 
     public void deletar(Long id) {
-        buscarPorId(id);
-        repository.deleteById(id);
+        repository.delete(buscarPorId(id));
     }
 }

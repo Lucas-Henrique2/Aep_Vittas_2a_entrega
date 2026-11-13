@@ -1,7 +1,7 @@
-package br.com.vittas.controller;
+package br.com.vittas.vittas.controller;
 
-import br.com.vittas.model.Paciente;
-import br.com.vittas.service.PacienteService;
+import br.com.vittas.vittas.model.Paciente;
+import br.com.vittas.vittas.service.PacienteService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
