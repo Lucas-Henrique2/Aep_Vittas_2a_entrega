@@ -7,8 +7,6 @@ import jakarta.persistence.*;
 @DiscriminatorValue("Gestor")
 public class Gestor extends Pessoa implements IAutenticavel {
 
-    @Id
-    private Long id;
     @Column(nullable = false, unique = true, length = 50)
     private String login;
 
@@ -31,10 +29,6 @@ public class Gestor extends Pessoa implements IAutenticavel {
         return "Gestor: " + getNome() + " | Login: " + login;
     }
 
-    private String getNome() {
-        return null;
-    }
-
     @Override
     public boolean autenticar(String login, String senha) {
         return this.login.equals(login) && this.senha.equals(senha);
@@ -42,14 +36,6 @@ public class Gestor extends Pessoa implements IAutenticavel {
 
     @Override
     public void alterarSenha(String novaSenha) { this.senha = novaSenha; }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
 
     public String getLogin() { return login; }
     public void setLogin(String login) { this.login = login; }

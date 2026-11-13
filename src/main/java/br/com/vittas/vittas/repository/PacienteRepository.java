@@ -1,6 +1,6 @@
 package br.com.vittas.vittas.repository;
 
-import com.vittas.model.Paciente;
+import br.com.vittas.vittas.model.Paciente;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

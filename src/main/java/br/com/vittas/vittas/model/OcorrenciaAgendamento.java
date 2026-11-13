@@ -1,6 +1,5 @@
 package br.com.vittas.vittas.model;
 
-import br.com.vittas.model.Agendamento;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import java.time.LocalDateTime;

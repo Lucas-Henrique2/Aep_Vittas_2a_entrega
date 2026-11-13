@@ -1,7 +1,7 @@
 package br.com.vittas.vittas.service;
 
-import com.vittas.model.Paciente;
-import com.vittas.repository.PacienteRepository;
+import br.com.vittas.vittas.model.Paciente;
+import br.com.vittas.vittas.repository.PacienteRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
