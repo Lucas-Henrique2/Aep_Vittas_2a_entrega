@@ -1,16 +1,14 @@
-package com.vittas.controller;
+package br.com.vittas.controller;
 
-import com.vittas.model.Paciente;
-import com.vittas.service.PacienteService;
+import br.com.vittas.model.Paciente;
+import br.com.vittas.service.PacienteService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 
 @RestController
 @RequestMapping("/api/pacientes")
 public class PacienteController {
-
     private final PacienteService service;
 
     public PacienteController(PacienteService service) {
@@ -22,19 +20,19 @@ public class PacienteController {
         return ResponseEntity.ok(service.criar(paciente));
     }
 
-    @GetMapping("/{id}")
-    public ResponseEntity<Paciente> buscar(@PathVariable Long id) {
-        return ResponseEntity.ok(service.buscarPorId(id));
-    }
-
     @GetMapping
     public ResponseEntity<List<Paciente>> listar() {
         return ResponseEntity.ok(service.listarTodos());
     }
 
+    @GetMapping("/{id}")
+    public ResponseEntity<Paciente> buscar(@PathVariable Long id) {
+        return ResponseEntity.ok(service.buscarPorId(id));
+    }
+
     @PutMapping("/{id}")
-    public ResponseEntity<Paciente> atualizar(@PathVariable Long id, @RequestBody Paciente dados) {
-        return ResponseEntity.ok(service.atualizar(id, dados));
+    public ResponseEntity<Paciente> atualizar(@PathVariable Long id, @RequestBody Paciente paciente) {
+        return ResponseEntity.ok(service.atualizar(id, paciente));
     }
 
     @DeleteMapping("/{id}")
