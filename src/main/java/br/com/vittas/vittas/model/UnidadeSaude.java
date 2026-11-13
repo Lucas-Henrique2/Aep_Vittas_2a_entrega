@@ -53,16 +53,22 @@ public class UnidadeSaude {
 
     public Long getId() { return id; }
     public void setId(Long id) { this.id = id; }
+
     public String getNome() { return nome; }
     public void setNome(String nome) { this.nome = nome; }
+
     public String getTipo() { return tipo; }
     public void setTipo(String tipo) { this.tipo = tipo; }
+
     public String getEndereco() { return endereco; }
     public void setEndereco(String endereco) { this.endereco = endereco; }
+
     public String getHorarioFuncionamento() { return horarioFuncionamento; }
     public void setHorarioFuncionamento(String horarioFuncionamento) { this.horarioFuncionamento = horarioFuncionamento; }
+
     public List<Profissional> getProfissionais() { return profissionais; }
     public void setProfissionais(List<Profissional> profissionais) { this.profissionais = profissionais; }
+
     public List<Agendamento> getAgendamentos() { return agendamentos; }
     public void setAgendamentos(List<Agendamento> agendamentos) { this.agendamentos = agendamentos; }
 }

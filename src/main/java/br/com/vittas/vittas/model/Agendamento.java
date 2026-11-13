@@ -1,5 +1,7 @@
 package br.com.vittas.vittas.model;
 
+import br.com.vittas.vittas.model.OcorrenciaAgendamento;
+import br.com.vittas.vittas.model.UnidadeSaude;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import java.time.LocalDateTime;
@@ -52,16 +54,22 @@ public class Agendamento {
 
     public Long getId() { return id; }
     public void setId(Long id) { this.id = id; }
+
     public LocalDateTime getDataHora() { return dataHora; }
     public void setDataHora(LocalDateTime dataHora) { this.dataHora = dataHora; }
+
     public String getStatus() { return status; }
     public void setStatus(String status) { this.status = status; }
+
     public Paciente getPaciente() { return paciente; }
     public void setPaciente(Paciente paciente) { this.paciente = paciente; }
+
     public Profissional getProfissional() { return profissional; }
     public void setProfissional(Profissional profissional) { this.profissional = profissional; }
+
     public UnidadeSaude getUnidade() { return unidade; }
     public void setUnidade(UnidadeSaude unidade) { this.unidade = unidade; }
+
     public List<OcorrenciaAgendamento> getOcorrencias() { return ocorrencias; }
     public void setOcorrencias(List<OcorrenciaAgendamento> ocorrencias) { this.ocorrencias = ocorrencias; }
 }

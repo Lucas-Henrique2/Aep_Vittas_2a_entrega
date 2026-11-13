@@ -37,8 +37,10 @@ public class Profissional extends Pessoa {
 
     public String getCrm() { return crm; }
     public void setCrm(String crm) { this.crm = crm; }
+
     public String getEspecialidade() { return especialidade; }
     public void setEspecialidade(String especialidade) { this.especialidade = especialidade; }
+
     public UnidadeSaude getUnidade() { return unidade; }
     public void setUnidade(UnidadeSaude unidade) { this.unidade = unidade; }
 }
